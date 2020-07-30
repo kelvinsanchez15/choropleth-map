@@ -1,8 +1,8 @@
-# Data Visualization Project #3: Heat Map using D3.
+# Data Visualization Project #3: Choropleth Map using D3.
 
 ## View project
 
-[D3 Scatterplot Graph](https://kelvinsanchez15.github.io/heat-map/)
+[D3 Choropleth Map](https://kelvinsanchez15.github.io/choropleth-map/)
 
 ## Additional Dependencies
 
