@@ -10,9 +10,7 @@ body {
 }
 
 .container {
-  padding: 20px;
-  margin: 20px;
-  min-width: 62%;
+  min-width: 65%;
   max-width: 90%;
   color: white;
 }
@@ -31,13 +29,9 @@ body {
 }
 
 .county:hover {
-  stroke: black;
-  stroke-width: 0.7px;
-  stroke-linejoin: round;
-}
-
-.cell:hover {
-  stroke: black;
+  fill-opacity: 0;
+  stroke: white;
+  stroke-width: 0.5px;
 }
 
 #tooltip {
@@ -51,6 +45,7 @@ body {
   box-shadow: 0px 0px 49px -6px rgba(0, 0, 0, 0.75);
 }
 
-text {
+#x-axis {
+  font-size: 0.8em;
   font-family: "Roboto", sans-serif;
 }

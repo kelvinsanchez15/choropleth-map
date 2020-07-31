@@ -10,7 +10,6 @@ const promises = [d3.json(countiesJson), d3.json(educationJson)];
 // SVG layout setup
 const width = 965;
 const height = 610;
-const margin = { top: 10, right: 10, bottom: 10, left: 10 };
 
 const svg = d3
   .select("#choropleth-map")
@@ -25,6 +24,8 @@ Promise.all(promises).then(([topology, education]) => {
     education.forEach((data) => {
       if (data.fips === geo.id) {
         geo.education = data.bachelorsOrHigher;
+        geo.state = data.state;
+        geo.area = data["area_name"];
       }
     });
   });
@@ -86,7 +87,7 @@ Promise.all(promises).then(([topology, education]) => {
     tooltip.transition().duration(200).style("opacity", 0.9);
 
     tooltip
-      .html(`${d.education}`)
+      .html(`${d.area}, ${d.state}: ${d.education}%`)
       .attr("data-education", d.education)
       .style("left", d3.event.pageX + 20 + "px")
       .style("top", d3.event.pageY + 20 + "px");
@@ -99,7 +100,7 @@ Promise.all(promises).then(([topology, education]) => {
   const legend = svg
     .append("g")
     .attr("id", "legend")
-    .attr("transform", `translate(520, 550)`);
+    .attr("transform", `translate(${width / 2 - 100}, 25)`);
 
   legend
     .selectAll("rect")
