@@ -1,4 +1,4 @@
-# Data Visualization Project #3: Choropleth Map using D3.
+# Data Visualization Project #4: Choropleth Map using D3.
 
 ## View project
 
